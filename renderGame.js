@@ -45,7 +45,7 @@
                 parent.style.height=data.imgHeight+data.y-1+'px';
                 parent.style.left=parseInt((document.getElementById('container').offsetWidth)-parseInt(parent.style.width))/2+'px';
                 parent.style.background='pink';
-                parent.innerHTML='<h2 style="text-align: center;line-height: 300px;font-size: 16px;cursor: pointer">Çëµã»÷¿ªÊ¼</h2>'
+                parent.innerHTML='<h2 style="text-align: center;line-height: 300px;font-size: 16px;cursor: pointer">è¯·é€‰æ‹©æ¨¡å¼</h2>'
                 parent.style.background='#pink';
             }
             document.getElementById('easy').onclick= function () {
@@ -62,12 +62,12 @@
             };
             begin.onclick= function () {
                 if(_flag===0){
-                    alert('ÇëÑ¡ÔñÄ£Ê½');
+                    alert('è¯·é€‰æ‹©æ¨¡å¼');
                     //beforeBegin();
                 }else{
                     setCss();
                     begin.onclick= function () {
-                        alert('ÕıÔÚ½øĞĞÖĞ');
+                        alert('æ­£åœ¨æ¸¸æˆä¸­');
                     };
                     document.getElementById('easy').onclick=null;
                     document.getElementById('difficult').onclick=null;
@@ -98,23 +98,23 @@
             parent.style.width=data.imgWidth+data.x-1+'px';
             parent.style.height=data.imgHeight+data.y-1+'px';
             parent.style.left=parseInt((document.getElementById('container').offsetWidth)-parseInt(parent.style.width))/2+'px';
-            randomArr();//µÚÒ»´Î´òÂÒË³Ğò
+            randomArr();//ÂµÃšÃ’Â»Â´ÃÂ´Ã²Ã‚Ã’Ã‹Â³ÃÃ²
             el=document.createElement('div');
             el.className='element';
             el.flag=0;
-            el.tag=len-1;//×îºó¼ì²é
+            el.tag=len-1;//Ã—Ã®ÂºÃ³Â¼Ã¬Â²Ã©
             el.style.width=data.imgWidth/data.x+'px';
             el.style.height=data.imgHeight/data.y+'px';
-            divArr.push(el);//Ìí¼Ó×îºóÒ»¸ö¿Õ°×div
+            divArr.push(el);//ÃŒÃ­Â¼Ã“Ã—Ã®ÂºÃ³Ã’Â»Â¸Ã¶Â¿Ã•Â°Ã—div
             render();
         }
-        //´Ëº¯ÊıÓÃÓÚ´òÂÒÊı×é
+        //Â´Ã‹ÂºÂ¯ÃŠÃ½Ã“ÃƒÃ“ÃšÂ´Ã²Ã‚Ã’ÃŠÃ½Ã—Ã©
         function randomArr(){
             divArr.sort(function () {
                 return Math.random()<.5?1:-1;
             })
         }
-        //äÖÈ¾£¬Ã¿´Î¸Ä±äË³Ğò¶¼Òªrender
+        //Ã¤Ã–ÃˆÂ¾Â£Â¬ÃƒÂ¿Â´ÃÂ¸Ã„Â±Ã¤Ã‹Â³ÃÃ²Â¶Â¼Ã’Âªrender
         function render(){
             for(var i=0;i<divArr.length;i++){
                 divArr[i].style.left=(data.imgWidth/data.x+1)*(i%data.x)+'px';
@@ -128,7 +128,7 @@
             }
 
         }
-        //µ±µã»÷µÄÔªËØµÄÏàÁÚÔªËØflag==0Ê±£¬½»»»ÔªËØ£¬²¢render
+        //ÂµÂ±ÂµÃ£Â»Ã·ÂµÃ„Ã”ÂªÃ‹Ã˜ÂµÃ„ÃÃ ÃÃšÃ”ÂªÃ‹Ã˜flag==0ÃŠÂ±Â£Â¬Â½Â»Â»Â»Ã”ÂªÃ‹Ã˜Â£Â¬Â²Â¢render
         function move(num){
             if(divArr[num].flag!==0){
                 if((num%data.x!==0)&&divArr[num-1].flag===0){
@@ -154,7 +154,7 @@
             render();
             check();
         }
-        //¼ì²éÊÇ·ñÍê³ÉÓÎÏ·
+        //Â¼Ã¬Â²Ã©ÃŠÃ‡Â·Ã±ÃÃªÂ³Ã‰Ã“ÃÃÂ·
         function check(){
             var flag=0;
             for(var i=0;i<divArr.length;i++){
@@ -167,11 +167,11 @@
                 divArr[len-1].style.backgroundPosition='-'+(data.imgWidth/data.x)*((len-1)%data.x)+'px -'+(data.imgHeight/data.y)*(Math.floor((len-1)/data.x))+'px';
                 divArr[len-1].style.backgroundSize=data.imgWidth+'px '+data.imgHeight+'px';
                 setTimeout(function () {
-                    alert('ÓÎÏ·Íê³É,ÓÃÊ±:'+(timeNum-1)+'Ãë,²½Êı:'+traceNum);
+                    alert('æ¸¸æˆå®Œæˆ,ç”¨æ—¶:'+(timeNum-1)+'ç§’,æ­¥æ•°:'+traceNum);
                 },50);
                 reset();
                 begin.onclick= function () {
-                    alert('Çëµã»÷ÖØÖÃ')
+                    alert('è¯·é€‰æ‹©æ¨¡å¼')
                 };
                 //document.getElementById('easy').onclick=null;
                // document.getElementById('difficult').onclick=null
